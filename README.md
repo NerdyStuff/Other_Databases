@@ -76,6 +76,9 @@ cypher-shell -a localhost -u <username> -p <password>
 * [Cypher-shell](https://neo4j.com/docs/operations-manual/current/tools/cypher-shell/)
 * [Import CSV data to neo4j](https://neo4j.com/developer/guide-importing-data-and-etl/)
 * [How to extract .gz files](https://tecadmin.net/extract-gz-file-in-linux-command/)
+* [IMDB DBMS from Github](https://github.com/TheSarang/IMDB-Database-Management-System/blob/master/SQL_Queries_RESULTS.pdf)
+* [IMDb Dataset](https://datasets.imdbws.com/)
+* [IMDb Dataset Interface](https://www.imdb.com/interfaces/)
 
 ### Cypher Cheatsheet
 A cheatsheet for Cypher can be found [here](https://people.inf.elte.hu/kiss/13kor/Neo4j_CheatSheet_v3.pdf).
