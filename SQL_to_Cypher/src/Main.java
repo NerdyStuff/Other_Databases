@@ -11,7 +11,7 @@ public class Main
     // Path of output file
     private static final String FILE_PATH = "cypher.txt";
 
-    public static void main(String[] args)
+    public static void main(String[] args) throws Exception
     {
         Connection connnection = Connector.getConnection();
 
