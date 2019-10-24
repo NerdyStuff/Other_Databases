@@ -19,3 +19,6 @@ To analyze the dataset and show advantages and disadvantages of graph based data
 2. **[MariaDB](https://mariadb.org/)** to store the data from IMDb
 3. **[Neo4J](https://neo4j.com/)** as graph database
 4. **[IntelliJ](https://www.jetbrains.com/idea/)** to write the SQL to Cypher Program
+
+### Cypher Cheatsheet
+A cheatsheet for Cypher can be found [here](https://people.inf.elte.hu/kiss/13kor/Neo4j_CheatSheet_v3.pdf).
