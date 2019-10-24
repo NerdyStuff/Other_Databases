@@ -24,6 +24,8 @@ public class Main
         String sql = "SELECT * FROM ";
         String cypher_line = "";
 
+        BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_PATH, true));
+
         try
         {
             ResultSet resultSet = Connector.getQueryResult(connnection, sql);
@@ -41,36 +43,22 @@ public class Main
                 */
 
 
-                try(FileWriter fw = new FileWriter(FILE_PATH, true);
-                    BufferedWriter bw = new BufferedWriter(fw);
-                    PrintWriter printWriter = new PrintWriter(bw))
-                {
-                    // Append generated Cypher line to File
-                    printWriter.println(cypher_line);
-
-                }
-
-                catch (IOException e)
-                {
-                    e.printStackTrace();
-                    return;
-                }
+                writer.append(cypher_line);
             }
+
+            // Save File
+            writer.close();
         }
 
         catch (Exception e)
         {
             e.printStackTrace();
+            // Exit
             return;
         }
 
         // Close Connection
         Connector.closeConnection(connnection);
-
-    }
-
-    private void addToCypher(Connection c, String sql)
-    {
 
     }
 }
