@@ -1,34 +1,34 @@
 //Create title_basics
 USING PERIODIC COMMIT
-LOAD CSV WITH HEADERS FROM "file:/title_basics.csv" AS row
-CREATE (:title_basics {tconst: row.tconst, originalTitle: row.originalTitle, primaryTitle: row.primaryTitle, genre: split(row.genre, ","), runtimeMinutes: row.runtimeMinutes, titleType: row.titleType, isAdult: row.isAdult, startYear: row.startYear, endYear: row.endYear});
+LOAD CSV WITH HEADERS FROM "file:///title_basics.csv" AS row FIELDTERMINATOR ','
+CREATE (:title_basics {tconst: row.tconst, titleType: row.titleType, primaryTitle: row.primaryTitle, originalTitle: row.originalTitle, isAdult: row.isAdult, startYear: row.startYear, endYear: row.endYear, runtimeMinutes: row.runtimeMinutes, genre: split(row.genre, ",")});
 
 //Create title_ratings
 USING PERIODIC COMMIT
-LOAD CSV WITH HEADERS FROM "file:/title_ratings.csv" AS row
-CREATE (:title_ratings {numVotes: row.numVotes, averageRating: row.averageRating});
+LOAD CSV WITH HEADERS FROM "file:///title_ratings.csv" AS row FIELDTERMINATOR ','
+CREATE (:title_ratings {tconst: row.tconst, numVotes: row.numVotes, averageRating: row.averageRating});
 
-//Create title_episodes
+//Create title_episode
 USING PERIODIC COMMIT
-LOAD CSV WITH HEADERS FROM "file:/title_episode.csv" AS row
-CREATE (:title_episode {tconst: row.tconst, seasonNumber: row.seasonNumber, episodeNumber: row.episodeNumber});
+LOAD CSV WITH HEADERS FROM "file:///title_episode.csv" AS row FIELDTERMINATOR ','
+CREATE (:title_episode {tconst: row.tconst, parentTconst: row.parentTconst, seasonNumber: row.seasonNumber, episodeNumber: row.episodeNumber});
 
 //Create name_basics
 USING PERIODIC COMMIT
-LOAD CSV WITH HEADERS FROM "file:/name_basics.csv" AS row
+LOAD CSV WITH HEADERS FROM "file:///name_basics.csv" AS row FIELDTERMINATOR ','
 CREATE (:name_basics {nconst: row.nconst, primaryName: row.primaryName, birthYear: row.birthYear, deathYear: row.deathYear, primaryProfession: split(row.primaryProfession, ","), knownForTitles: split(row.knownForTitles, ",")});
 
 //Create title_crew
 USING PERIODIC COMMIT
-LOAD CSV WITH HEADERS FROM "file:/title_crew.csv" AS row
-CREATE (:title_crew {directors: split(row.directors, ","), writers: split(row.writers, ",")});
+LOAD CSV WITH HEADERS FROM "file:///title_crew.csv" AS row FIELDTERMINATOR ','
+CREATE (:title_crew {tconst: row.tconst, directors: split(row.directors, ","), writers: split(row.writers, ",")});
 
 //Create title_akas
 USING PERIODIC COMMIT
-LOAD CSV WITH HEADERS FROM "file:/title_akas.csv" AS row
-CREATE (:title_akas {ordering: row.ordering, region: row.region, titleId: row.titleId, title: row.title, language: row.language, types: split(row.types, ","), attributes: split(row.attributes, ","), isOriginalTitle: row.isOriginalTitle});
+LOAD CSV WITH HEADERS FROM "file:///title_akas.csv" AS row FIELDTERMINATOR ','
+CREATE (:title_akas {titleId: row.titleId, ordering: row.ordering, title: row.title, region: row.region, language: row.language, types: split(row.types, ","), attributes: split(row.attributes, ","), isOriginalTitle: row.isOriginalTitle});
 
 //Create title_principals
 USING PERIODIC COMMIT
-LOAD CSV WITH HEADERS FROM "file:/title_principals.csv" AS row
-CREATE (:title_principals {ordering: row.ordering, category: row.category, job: row.job, characters: row.characters});
+LOAD CSV WITH HEADERS FROM "file:///title_principals.csv" AS row FIELDTERMINATOR ','
+CREATE (:title_principals {tconst: row.tconst, ordering: row.ordering, nconst: row.nconst, category: row.category, job: row.job, characters: row.characters});
