@@ -77,6 +77,13 @@ LOAD DATA LOCAL INFILE '/var/lib/neo4j/data/downloads/title.principals.tsv' INTO
 
 LOAD DATA LOCAL INFILE '/var/lib/neo4j/data/downloads/title.ratings.tsv' INTO TABLE title_ratings FIELDS TERMINATED BY '\t' LINES TERMINATED BY '\n';
 
+-- Remove false headers
+DELETE FROM title_basics WHERE tconst = 'tconst';
+DELETE FROM title_akas WHERE titleID = 'titleID';
+DELETE FROM title_crew WHERE tconst = 'tconst';
+DELETE FROM title_episode WHERE tconst = 'tconst';
+DELETE FROM title_principals WHERE tconst = 'tconst';
+DELETE FROM name_basics WHERE nconst = 'nconst';
 
 -- Create title_basics
 SELECT 'tconst', 'originalTitle', 'primaryTitle', 'genre', 'runtimeMinutes', 'titleType', 'isAdult', 'startYear', 'endYear' UNION ALL SELECT * from title_basics INTO OUTFILE '/tmp/title_basics.csv' FIELDS TERMINATED BY ',';
