@@ -79,22 +79,22 @@ LOAD DATA LOCAL INFILE '/var/lib/neo4j/data/downloads/title.ratings.tsv' INTO TA
 
 
 -- Create title_basics
-SELECT 'tconst', 'originalTitle', 'primaryTitle', 'genre', 'runtimeMinutes', 'titleType', 'isAdult', 'startYear', 'endYear' UNION ALL SELECT * from title_basics INTO OUTFILE '/tmp/title_basics.csv';
+SELECT 'tconst', 'originalTitle', 'primaryTitle', 'genre', 'runtimeMinutes', 'titleType', 'isAdult', 'startYear', 'endYear' UNION ALL SELECT * from title_basics INTO OUTFILE '/tmp/title_basics.csv' FIELDS TERMINATED BY ',';
 
 -- Create title_akas
-SELECT 'titleID', 'ordering', 'title', 'region', 'language', 'types', 'attributes', 'isOriginalTitle' UNION ALL SELECT * from title_akas INTO OUTFILE '/tmp/title_akas.csv';
+SELECT 'titleID', 'ordering', 'title', 'region', 'language', 'types', 'attributes', 'isOriginalTitle' UNION ALL SELECT * from title_akas INTO OUTFILE '/tmp/title_akas.csv' FIELDS TERMINATED BY ',';
 
 -- Create title_crew
-SELECT 'tconst', 'directors', 'writers' UNION ALL SELECT * from title_crew INTO OUTFILE '/tmp/title_crew.csv';
+SELECT 'tconst', 'directors', 'writers' UNION ALL SELECT * from title_crew INTO OUTFILE '/tmp/title_crew.csv' FIELDS TERMINATED BY ',';
 
 -- Create title_episode
-SELECT 'tconst', 'parentTconst', 'seasonNumber', 'episodeNumber' UNION ALL SELECT * from title_episode INTO OUTFILE '/tmp/title_episode.csv';
+SELECT 'tconst', 'parentTconst', 'seasonNumber', 'episodeNumber' UNION ALL SELECT * from title_episode INTO OUTFILE '/tmp/title_episode.csv' FIELDS TERMINATED BY ',';
 
 -- Create title_principals
-SELECT 'tconst', 'ordering', 'nconst', 'category', 'job', 'characters' UNION ALL SELECT * from title_principals INTO OUTFILE '/tmp/title_principals.csv';
+SELECT 'tconst', 'ordering', 'nconst', 'category', 'job', 'characters' UNION ALL SELECT * from title_principals INTO OUTFILE '/tmp/title_principals.csv' FIELDS TERMINATED BY ',';
 
 -- Create title_ratings
-SELECT 'tconst', 'averageRating', 'numVotes' UNION ALL SELECT * from title_ratings INTO OUTFILE '/tmp/title_ratings.csv';
+SELECT 'tconst', 'averageRating', 'numVotes' UNION ALL SELECT * from title_ratings INTO OUTFILE '/tmp/title_ratings.csv' FIELDS TERMINATED BY ',';
 
 -- Create name_basics
-SELECT 'nconst', 'primaryName', 'birthYear', 'deathYear', 'primaryConfession', 'knownForTitles' UNION ALL SELECT * from name_basics INTO OUTFILE '/tmp/name_basics.csv';
+SELECT 'nconst', 'primaryName', 'birthYear', 'deathYear', 'primaryConfession', 'knownForTitles' UNION ALL SELECT * from name_basics INTO OUTFILE '/tmp/name_basics.csv' FIELDS TERMINATED BY ',';
