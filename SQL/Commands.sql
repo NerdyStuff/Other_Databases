@@ -94,23 +94,26 @@ UPDATE title_basics SET `primaryTitle` = 'Evangeline Lilly, "Game of Thrones", a
 UPDATE title_basics SET `primaryTitle` = 'Plummer, "SMILF", Chau: Golden Globes 2018 Surprise Noms', `originalTitle` = 'Plummer, "SMILF", Chau: Golden Globes 2018 Surprise Noms' WHERE `tconst` = 'tt7754890';
 UPDATE title_basics SET `primaryTitle` = 'Argento Busted, Warren Lunacy, Sweden''s "Problem", + UK Backs South Africa Thugs', `originalTitle` = 'Argento Busted, Warren Lunacy, Sweden''s "Problem", + UK Backs South Africa Thugs' WHERE `tconst` = 'tt8885040';
 
--- Create title_basics
-SELECT 'tconst', 'originalTitle', 'primaryTitle', 'genre', 'runtimeMinutes', 'titleType', 'isAdult', 'startYear', 'endYear' UNION ALL SELECT * from title_basics INTO OUTFILE '/tmp/title_basics.csv' FIELDS TERMINATED BY ';';
+-- Escape all double quotes
+   -- title_basics
+   UPDATE title_basics SET `tconst` = REPLACE(`tconst`,'"','""'), `originalTitle` = REPLACE(`originalTitle`,'"','""'), `primaryTitle` = REPLACE(`primaryTitle`,'"','""'), `genres` = REPLACE(`genres`,'"','""'), `runtimeMinutes` = REPLACE(`runtimeMinutes`,'"','""'), `titleType` = REPLACE(`titleType`,'"','""'), `isAdult` = REPLACE(`isAdult`,'"','""'), `startYear` = REPLACE(`startYear`,'"','""'), `endYear` =  REPLACE(`endYear`,'"','""');
 
+-- Create title_basics
+SELECT 'tconst', 'originalTitle', 'primaryTitle', 'genre', 'runtimeMinutes', 'titleType', 'isAdult', 'startYear', 'endYear' UNION ALL SELECT * from title_basics INTO OUTFILE '/tmp/title_basics.csv' FIELDS TERMINATED BY ';' ENCLOSED BY '"';
 -- Create title_akas
-SELECT 'titleID', 'ordering', 'title', 'region', 'language', 'types', 'attributes', 'isOriginalTitle' UNION ALL SELECT * from title_akas INTO OUTFILE '/tmp/title_akas.csv' FIELDS TERMINATED BY ';';
+SELECT 'titleID', 'ordering', 'title', 'region', 'language', 'types', 'attributes', 'isOriginalTitle' UNION ALL SELECT * from title_akas INTO OUTFILE '/tmp/title_akas.csv' FIELDS TERMINATED BY ';' ENCLOSED BY '"';
 
 -- Create title_crew
-SELECT 'tconst', 'directors', 'writers' UNION ALL SELECT * from title_crew INTO OUTFILE '/tmp/title_crew.csv' FIELDS TERMINATED BY ';';
+SELECT 'tconst', 'directors', 'writers' UNION ALL SELECT * from title_crew INTO OUTFILE '/tmp/title_crew.csv' FIELDS TERMINATED BY ';' ENCLOSED BY '"';
 
 -- Create title_episode
-SELECT 'tconst', 'parentTconst', 'seasonNumber', 'episodeNumber' UNION ALL SELECT * from title_episode INTO OUTFILE '/tmp/title_episode.csv' FIELDS TERMINATED BY ';';
+SELECT 'tconst', 'parentTconst', 'seasonNumber', 'episodeNumber' UNION ALL SELECT * from title_episode INTO OUTFILE '/tmp/title_episode.csv' FIELDS TERMINATED BY ';' ENCLOSED BY '"';
 
 -- Create title_principals
-SELECT 'tconst', 'ordering', 'nconst', 'category', 'job', 'characters' UNION ALL SELECT * from title_principals INTO OUTFILE '/tmp/title_principals.csv' FIELDS TERMINATED BY ';';
+SELECT 'tconst', 'ordering', 'nconst', 'category', 'job', 'characters' UNION ALL SELECT * from title_principals INTO OUTFILE '/tmp/title_principals.csv' FIELDS TERMINATED BY ';' ENCLOSED BY '"';
 
 -- Create title_ratings
-SELECT 'tconst', 'averageRating', 'numVotes' UNION ALL SELECT * from title_ratings INTO OUTFILE '/tmp/title_ratings.csv' FIELDS TERMINATED BY ';';
+SELECT 'tconst', 'averageRating', 'numVotes' UNION ALL SELECT * from title_ratings INTO OUTFILE '/tmp/title_ratings.csv' FIELDS TERMINATED BY ';' ENCLOSED BY '"';
 
 -- Create name_basics
-SELECT 'nconst', 'primaryName', 'birthYear', 'deathYear', 'primaryConfession', 'knownForTitles' UNION ALL SELECT * from name_basics INTO OUTFILE '/tmp/name_basics.csv' FIELDS TERMINATED BY ';';
+SELECT 'nconst', 'primaryName', 'birthYear', 'deathYear', 'primaryConfession', 'knownForTitles' UNION ALL SELECT * from name_basics INTO OUTFILE '/tmp/name_basics.csv' FIELDS TERMINATED BY ';' ENCLOSED BY '"';
