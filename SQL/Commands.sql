@@ -85,6 +85,15 @@ DELETE FROM title_episode WHERE tconst = 'tconst';
 DELETE FROM title_principals WHERE tconst = 'tconst';
 DELETE FROM name_basics WHERE nconst = 'nconst';
 
+-- Correct false field values
+UPDATE title_basics SET `primaryTitle` = 'After Devastation of "Chernobyl", What to Watch Next', `originalTitle` = 'After Devastation of "Chernobyl", What to Watch Next' WHERE `tconst` = 'tt10432144';
+UPDATE title_basics SET `primaryTitle` = 'Swing it', `originalTitle` = 'Swing it' WHERE `tconst` = 'tt0033122';
+UPDATE title_basics SET `primaryTitle` = 'After "The Boys", Watch These Supes Next', `originalTitle` = 'After "The Boys", Watch These Supes Next' WHERE `tconst` = 'tt10767180';
+UPDATE title_basics SET `primaryTitle` = '"Atlas Shrugged", the Movie: Why Ayn Rand is More Relevant Than Ever', `originalTitle` = '"Atlas Shrugged", the Movie: Why Ayn Rand is More Relevant Than Ever' WHERE `tconst` = 'tt2055043';
+UPDATE title_basics SET `primaryTitle` = 'Evangeline Lilly, "Game of Thrones", and What''s Trending Today on IMDb', `originalTitle` = 'Evangeline Lilly, "Game of Thrones", and What''s Trending Today on IMDb' WHERE `tconst` = 'tt7229984';
+UPDATE title_basics SET `primaryTitle` = 'Plummer, "SMILF", Chau: Golden Globes 2018 Surprise Noms', `originalTitle` = 'Plummer, "SMILF", Chau: Golden Globes 2018 Surprise Noms' WHERE `tconst` = 'tt7754890';
+UPDATE title_basics SET `primaryTitle` = 'Argento Busted, Warren Lunacy, Sweden''s "Problem", + UK Backs South Africa Thugs', `originalTitle` = 'Argento Busted, Warren Lunacy, Sweden''s "Problem", + UK Backs South Africa Thugs' WHERE `tconst` = 'tt8885040';
+
 -- Create title_basics
 SELECT 'tconst', 'originalTitle', 'primaryTitle', 'genre', 'runtimeMinutes', 'titleType', 'isAdult', 'startYear', 'endYear' UNION ALL SELECT * from title_basics INTO OUTFILE '/tmp/title_basics.csv' FIELDS TERMINATED BY ';';
 
