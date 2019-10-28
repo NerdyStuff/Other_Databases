@@ -93,13 +93,11 @@ UPDATE title_basics SET `primaryTitle` = 'Argento Busted, Warren Lunacy, Sweden'
 UPDATE title_basics SET `tconst` = REPLACE(`tconst`,'"','""'), `originalTitle` = REPLACE(`originalTitle`,'"','""'), `primaryTitle` = REPLACE(`primaryTitle`,'"','""'), `genres` = REPLACE(`genres`,'"','""'), `runtimeMinutes` = REPLACE(`runtimeMinutes`,'"','""'), `titleType` = REPLACE(`titleType`,'"','""'), `isAdult` = REPLACE(`isAdult`,'"','""'), `startYear` = REPLACE(`startYear`,'"','""'), `endYear` =  REPLACE(`endYear`,'"','""');
    -- name_basics
 UPDATE name_basics SET `nconst` = REPLACE(`nconst`,'"','""'), `primaryName` = REPLACE(`primaryName`,'"','""'), `birthYear` = REPLACE(`birthYear`,'"','""'), `deathYear` = REPLACE(`deathYear`,'"','""'), `primaryProfession` = REPLACE(`primaryProfession`,'"','""'), `knownForTitles` = REPLACE(`knownForTitles`,'"','""');
-   -- title_akas
-UPDATE title_akas SET `titleId` = REPLACE(`titleId`,'"','""'), `ordering` = REPLACE(`ordering`,'"','""'), `title` = REPLACE(`title`,'"','""'), `region` = REPLACE(`region`,'"','""'), `language` = REPLACE(`language`,'"','""'), `types` = REPLACE(`types`,'"','""'), `attributes` = REPLACE(`attributes`,'"','""'), `isOriginalTitle` = REPLACE(`isOriginalTitle`,'"','""');
    -- title_principals
 UPDATE title_principals SET `tconst` = REPLACE(`tconst`,'"','""'), `ordering` = REPLACE(`ordering`,'"','""'), `nconst` = REPLACE(`nconst`,'"','""'), `category` = REPLACE(`category`,'"','""'), `job` = REPLACE(`job`,'"','""'), `characters` = REPLACE(`characters`,'"','""');
 
 -- Create title_basics
-SELECT 'tconst', 'originalTitle', 'primaryTitle', 'genre', 'runtimeMinutes', 'titleType', 'isAdult', 'startYear', 'endYear' UNION ALL SELECT * from title_basics INTO OUTFILE '/tmp/title_basics.csv' FIELDS TERMINATED BY ';' ENCLOSED BY '"';
+SELECT 'tconst', 'titleType', 'primaryTitle', 'originalTitle', 'isAdult', 'startYear', 'endYear', 'runtimeMinutes', 'genre' UNION ALL SELECT * from title_basics INTO OUTFILE '/tmp/title_basics.csv' FIELDS TERMINATED BY ';' ENCLOSED BY '"';
 -- Create title_akas
 SELECT 'titleID', 'ordering', 'title', 'region', 'language', 'types', 'attributes', 'isOriginalTitle' UNION ALL SELECT * from title_akas INTO OUTFILE '/tmp/title_akas.csv' FIELDS TERMINATED BY ';' ENCLOSED BY '"';
 -- Create title_crew
