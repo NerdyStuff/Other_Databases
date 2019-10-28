@@ -88,16 +88,14 @@ UPDATE title_basics SET `primaryTitle` = 'Evangeline Lilly, "Game of Thrones", a
 UPDATE title_basics SET `primaryTitle` = 'Plummer, "SMILF", Chau: Golden Globes 2018 Surprise Noms', `originalTitle` = 'Plummer, "SMILF", Chau: Golden Globes 2018 Surprise Noms' WHERE `tconst` = 'tt7754890';
 UPDATE title_basics SET `primaryTitle` = 'Argento Busted, Warren Lunacy, Sweden''s "Problem", + UK Backs South Africa Thugs', `originalTitle` = 'Argento Busted, Warren Lunacy, Sweden''s "Problem", + UK Backs South Africa Thugs' WHERE `tconst` = 'tt8885040';
 
--- Escape all double quotes
+-- Escape all double quotes where it is needed
    -- title_basics
 UPDATE title_basics SET `tconst` = REPLACE(`tconst`,'"','""'), `originalTitle` = REPLACE(`originalTitle`,'"','""'), `primaryTitle` = REPLACE(`primaryTitle`,'"','""'), `genres` = REPLACE(`genres`,'"','""'), `runtimeMinutes` = REPLACE(`runtimeMinutes`,'"','""'), `titleType` = REPLACE(`titleType`,'"','""'), `isAdult` = REPLACE(`isAdult`,'"','""'), `startYear` = REPLACE(`startYear`,'"','""'), `endYear` =  REPLACE(`endYear`,'"','""');
    -- name_basics
 UPDATE name_basics SET `nconst` = REPLACE(`nconst`,'"','""'), `primaryName` = REPLACE(`primaryName`,'"','""'), `birthYear` = REPLACE(`birthYear`,'"','""'), `deathYear` = REPLACE(`deathYear`,'"','""'), `primaryProfession` = REPLACE(`primaryProfession`,'"','""'), `knownForTitles` = REPLACE(`knownForTitles`,'"','""');
    -- title_akas
 UPDATE title_akas SET `titleId` = REPLACE(`titleId`,'"','""'), `ordering` = REPLACE(`ordering`,'"','""'), `title` = REPLACE(`title`,'"','""'), `region` = REPLACE(`region`,'"','""'), `language` = REPLACE(`language`,'"','""'), `types` = REPLACE(`types`,'"','""'), `attributes` = REPLACE(`attributes`,'"','""'), `isOriginalTitle` = REPLACE(`isOriginalTitle`,'"','""');
-   -- title_crew
-UPDATE title_principals SET `tconst` = REPLACE(`tconst`,'"','""'), `directors` = REPLACE(`directors`,'"','""'), `writers` = REPLACE(`writers`,'"','""');
-   -- title_episode
+   -- title_principals
 UPDATE title_principals SET `tconst` = REPLACE(`tconst`,'"','""'), `ordering` = REPLACE(`ordering`,'"','""'), `nconst` = REPLACE(`nconst`,'"','""'), `category` = REPLACE(`category`,'"','""'), `job` = REPLACE(`job`,'"','""'), `characters` = REPLACE(`characters`,'"','""');
 
 -- Create title_basics
