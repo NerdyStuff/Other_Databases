@@ -1,12 +1,12 @@
 //Create title_ratings
 USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS FROM "file:///title_ratings.csv" AS row FIELDTERMINATOR ';'
-CREATE (:title_ratings {tconst: row.tconst, numVotes: row.numVotes, averageRating: row.averageRating});
+CREATE (:title_ratings {tconst: row.tconst, numVotes: toInteger(row.numVotes), averageRating: toFloat(row.averageRating)});
 
 //Create title_episode
 USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS FROM "file:///title_episode.csv" AS row FIELDTERMINATOR ';'
-CREATE (:title_episode {tconst: row.tconst, parentTconst: row.parentTconst, seasonNumber: row.seasonNumber, episodeNumber: row.episodeNumber});
+CREATE (:title_episode {tconst: row.tconst, parentTconst: row.parentTconst, seasonNumber: toInteger(row.seasonNumber), episodeNumber: toInteger(row.episodeNumber)});
 
 //Create title_crew
 USING PERIODIC COMMIT
@@ -16,9 +16,7 @@ CREATE (:title_crew {tconst: row.tconst, directors: split(row.directors, ","), w
 //Create title_akas
 USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS FROM "file:///title_akas.csv" AS row FIELDTERMINATOR ';'
-CREATE (:title_akas {titleId: row.titleId, ordering: row.ordering, title: row.title, region: row.region, language: row.language, types: split(row.types, ","), attributes: split(row.attributes, ","), isOriginalTitle: row.isOriginalTitle});
-
-
+CREATE (:title_akas {titleId: toInteger(row.titleId), ordering: toInteger(row.ordering), title: row.title, region: row.region, language: row.language, types: split(row.types, ","), attributes: split(row.attributes, ","), isOriginalTitle: row.isOriginalTitle});
 //-------------------------
 // TODO
 
