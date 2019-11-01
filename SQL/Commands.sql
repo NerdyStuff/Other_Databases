@@ -77,6 +77,7 @@ DELETE FROM title_crew WHERE tconst = 'tconst';
 DELETE FROM title_episode WHERE tconst = 'tconst';
 DELETE FROM title_principals WHERE tconst = 'tconst';
 DELETE FROM name_basics WHERE nconst = 'nconst';
+DELETE FROM title_ratings WHERE tconst = 'tconst';
 
 -- Correct false field values
    -- title_basics
