@@ -32,3 +32,10 @@ CREATE (:title_basics {tconst: row.tconst, titleType: row.titleType, primaryTitl
 USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS FROM "file:///title_principals.csv" AS row FIELDTERMINATOR ';'
 CREATE (:title_principals {tconst: row.tconst, ordering: toInteger(row.ordering), nconst: row.nconst, category: row.category, job: row.job, characters: split(row.characters, ",")});
+
+//Create Relationship between title_basics and title_ratings
+MATCH (a:title_basics)
+WITH a
+MATCH (b:title_ratings)
+WHERE a.tconst = b.tconst
+CREATE (a)-[r:HAS_RATING]->(b)
