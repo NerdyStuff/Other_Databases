@@ -1,6 +1,12 @@
 # Other Databases
 This Repository is for the course 'advanced / other databases' at DHBW Mannheim.
 
+**Group:**
+* **Anna-Lena Richert** ([aalenaa](https://github.com/aalenaa))
+* **Anton Ochel** ([Tony1704](https://github.com/Tony1704))
+* **Benno Grimm** ([Grimmig18](https://github.com/Grimmig18))
+* **Marcel Mertens** ([Nerdystuff](https://github.com/NerdyStuff)) 
+
 ## General
 With this Project we want to analyze dependencies between films and actors. Therefore we used the dataset from [IMDb](https://www.imdb.com).
 
