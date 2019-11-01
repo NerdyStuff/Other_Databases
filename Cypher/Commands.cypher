@@ -17,6 +17,12 @@ CREATE (:title_crew {tconst: row.tconst, directors: split(row.directors, ","), w
 USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS FROM "file:///title_akas.csv" AS row FIELDTERMINATOR ';'
 CREATE (:title_akas {titleId: toInteger(row.titleId), ordering: toInteger(row.ordering), title: row.title, region: row.region, language: row.language, types: split(row.types, ","), attributes: split(row.attributes, ","), isOriginalTitle: row.isOriginalTitle});
+
+//Create name_basics
+USING PERIODIC COMMIT
+LOAD CSV WITH HEADERS FROM "file:///name_basics.csv" AS row FIELDTERMINATOR ';'
+CREATE (:name_basics {nconst: row.nconst, primaryName: row.primaryName, birthYear: row.birthYear, deathYear: row.deathYear, primaryProfession: split(row.primaryProfession, ","), knownForTitles: split(row.knownForTitles, ",")});
+
 //-------------------------
 // TODO
 
@@ -30,7 +36,3 @@ USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS FROM "file:///title_principals.csv" AS row FIELDTERMINATOR ';'
 CREATE (:title_principals {tconst: row.tconst, ordering: row.ordering, nconst: row.nconst, category: row.category, job: row.job, characters: row.characters});
 
-//Create name_basics
-USING PERIODIC COMMIT
-LOAD CSV WITH HEADERS FROM "file:///name_basics.csv" AS row FIELDTERMINATOR ';'
-CREATE (:name_basics {nconst: row.nconst, primaryName: row.primaryName, birthYear: row.birthYear, deathYear: row.deathYear, primaryProfession: split(row.primaryProfession, ","), knownForTitles: split(row.knownForTitles, ",")});
