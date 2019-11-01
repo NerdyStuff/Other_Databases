@@ -47,6 +47,8 @@ With this command we created a database called 'IMDB':
 CREATE DATABASE IMDB;
 ```
 Then we ran the queries from the .sql file.
+With these queries, we created tables, filled them with dta, removed some false data records and finally exported the datasets into a CSV file. As Fieldterminator we used a ';', because a ',' would have caused issues with our importing statements in cypher.
+The ',' were used, to split the arrays of people, which were provided as regular string in the downloaded TSV files.
 
 5. We used the cypher shell to import the CSV files therefore we used the statements, which can be found in [/Cypher/Commands.cypher](https://github.com/NerdyStuff/Other_Databases/blob/master/Cypher/Commands.cypher).
 
@@ -54,10 +56,11 @@ With this command we opened a cypher-shell to import the data:
 ```
 cypher-shell -a localhost -u <username> -p <password>
 ```
+The import of the datasets took quite a long time, which is caused by the massive amount of nodes which were created during the import process (almost 83 millions). Also the needed RAM increased drastically.
 
 ## Used tools and software
 1. **[Umlet](https://www.umlet.com/)** for ER-Modeling of IMDb dataset
-2. **[docker](https://www.docker.com/)**
+2. **[docker](https://www.docker.com/)** as container engine
 3. **[MariaDB](https://mariadb.org/)** to store the data from IMDb
 4. **[Neo4J](https://neo4j.com/)** as graph database
 5. **[wget](https://wiki.ubuntuusers.de/wget/) as download tool**
@@ -71,6 +74,7 @@ cypher-shell -a localhost -u <username> -p <password>
 
 
 ## References
+* [NeoJ docker](https://hub.docker.com/_/neo4j)
 * [Create CSV file with headers](https://stackoverflow.com/questions/5941809/include-headers-when-using-select-into-outfile/5941905)
 * [Getting started with neo4j](https://neo4j.com/developer/get-started/)
 * [Cypher-shell](https://neo4j.com/docs/operations-manual/current/tools/cypher-shell/)
