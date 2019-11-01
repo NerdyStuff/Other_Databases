@@ -63,8 +63,8 @@ The import of the datasets took quite a long time, which is caused by the massiv
 2. **[docker](https://www.docker.com/)** as container engine
 3. **[MariaDB](https://mariadb.org/)** to store the data from IMDb
 4. **[Neo4J](https://neo4j.com/)** as graph database
-5. **[wget](https://wiki.ubuntuusers.de/wget/) as download tool**
-6. **[gunzip](https://linux.die.net/man/1/gunzip) to extract files**
+5. **[wget](https://wiki.ubuntuusers.de/wget/)** as download tool
+6. **[gunzip](https://linux.die.net/man/1/gunzip)** to extract files
 
 
 **CHANGE**
