@@ -28,12 +28,7 @@ USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS FROM "file:///title_basics.csv" AS row FIELDTERMINATOR ';'
 CREATE (:title_basics {tconst: row.tconst, titleType: row.titleType, primaryTitle: row.primaryTitle, originalTitle: row.originalTitle, isAdult: row.isAdult, startYear: row.startYear, endYear: row.endYear, runtimeMinutes: toInteger(row.runtimeMinutes), genre: split(row.genre, ",")});
 
-
-//-------------------------
-// TODO
-
 //Create title_principals
 USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS FROM "file:///title_principals.csv" AS row FIELDTERMINATOR ';'
-CREATE (:title_principals {tconst: row.tconst, ordering: row.ordering, nconst: row.nconst, category: row.category, job: row.job, characters: row.characters});
-
+CREATE (:title_principals {tconst: row.tconst, ordering: toInteger(row.ordering), nconst: row.nconst, category: row.category, job: row.job, characters: split(row.characters, ",")});
