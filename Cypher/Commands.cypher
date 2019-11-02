@@ -33,6 +33,15 @@ USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS FROM "file:///title_principals.csv" AS row FIELDTERMINATOR ';'
 CREATE (:title_principals {tconst: row.tconst, ordering: toInteger(row.ordering), nconst: row.nconst, category: row.category, job: row.job, characters: split(row.characters, ",")});
 
+// Add index
+CREATE INDEX ON :title_basics(tconst);
+CREATE INDEX ON :title_crew(tconst);
+CREATE INDEX ON :title_ratings(tconst);
+CREATE INDEX ON :title_episode(tconst);
+CREATE INDEX ON :title_akas(tconst);
+CREATE INDEX ON :title_principals(tconst);
+CREATE INDEX ON :name_basics(nconst);
+
 //Create Relationship between title_basics and title_ratings
 MATCH (a:title_basics)
 WITH a
