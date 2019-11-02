@@ -98,6 +98,7 @@ we had no possibility to increase the built in RAM of our server, because we had
 * [Understanding memory consumption](https://neo4j.com/developer/kb/understanding-memory-consumption/)
 * [Understanding Neo4j’s data on disk](https://neo4j.com/developer/kb/understanding-data-on-disk/)
 * [Neo4j - Create an Index using Cypher](https://www.quackit.com/neo4j/tutorial/neo4j_create_an_index_using_cypher.cfm)
+* [Monitor progress of indexing in neo4j](https://stackoverflow.com/questions/31397552/can-you-monitor-the-progress-of-a-neo4j-constraint)
 
 ### Cypher Cheatsheet
 A cheatsheet for Cypher can be found [here](https://people.inf.elte.hu/kiss/13kor/Neo4j_CheatSheet_v3.pdf).
