@@ -56,7 +56,7 @@ WITH a
 MATCH (b:title_akas {titleID: a.tconst})
 WHERE NOT b:Processed
 WITH a, b
-LIMIT 500000
+LIMIT 1000000
 MERGE (a)-[r:HAS_TITLE_AKA]->(b)
 SET b:Processed;
 
