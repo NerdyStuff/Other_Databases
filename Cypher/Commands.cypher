@@ -40,23 +40,21 @@ MATCH (b:title_ratings)
 WHERE a.tconst = b.tconst
 CREATE (a)-[r:HAS_RATING]->(b);
 
-// TODO:
-
-//USED THIS:
-MATCH (a:title_basics)
-WITH a
+//Create Relationship between title_basics and title akas
+// This Query needs to be executed multiple times!
 MATCH (b:title_akas {titleID: a.tconst})
 WHERE NOT b:Processed
 WITH a, b
-LIMIT 20
+LIMIT 50000
 MERGE (a)-[r:HAS_TITLE_AKA]->(b)
 SET b:Processed;
 
-////////////////////////7
+// INSERT RELATIONSHIPS HERE
 
-//Create Relationship between title_basics and title_akas
-MATCH (a:title_basics)
-WITH a
-MATCH (b:title_akas)
-WHERE a.tconst = b.titleID
-CREATE (a)-[r:HAS_TITLE_AKA]->(b);
+
+
+// After all relationships are created remove temporary nodes
+// Run this query multiple times at the end of the relationship creation
+MATCH (n:Processed)
+WITH n LIMIT 50000
+REMOVE n:Processed;
