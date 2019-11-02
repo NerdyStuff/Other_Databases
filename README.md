@@ -96,8 +96,9 @@ we had no possibility to increase the built in RAM of our server, because we had
 * [IMDb Dataset Interface](https://www.imdb.com/interfaces/)
 * [Add relationships to existing nodes](https://stackoverflow.com/questions/40492337/neo4j-add-huge-number-of-relationships-to-already-existing-nodes)
 * [Understanding memory consumption](https://neo4j.com/developer/kb/understanding-memory-consumption/)
-* [Understanding Neo4j’s data on disk](https://neo4j.com/developer/kb/understanding-data-on-disk/)
+* [Understanding neo4j’s data on disk](https://neo4j.com/developer/kb/understanding-data-on-disk/)
 * [Neo4j - Create an Index using Cypher](https://www.quackit.com/neo4j/tutorial/neo4j_create_an_index_using_cypher.cfm)
+* [Indexes on neo4j](https://neo4j.com/docs/cypher-manual/current/schema/index/)
 * [Monitor progress of indexing in neo4j](https://stackoverflow.com/questions/31397552/can-you-monitor-the-progress-of-a-neo4j-constraint)
 
 ### Cypher Cheatsheet
