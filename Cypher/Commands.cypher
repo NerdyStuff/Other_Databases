@@ -42,6 +42,8 @@ CREATE (a)-[r:HAS_RATING]->(b);
 
 //Create Relationship between title_basics and title akas
 // This Query needs to be executed multiple times!
+MATCH (a:title_basics)
+WITH a
 MATCH (b:title_akas {titleID: a.tconst})
 WHERE NOT b:Processed
 WITH a, b
