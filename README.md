@@ -64,6 +64,9 @@ cypher-shell -a localhost -u <username> -p <password>
 ```
 The import of the datasets took quite a long time, which is caused by the massive amount of nodes which were created during the import process (almost 83 millions). Also the needed RAM increased drastically.
 
+6. Speaking of the RAM it needs tobe mentioned, that creating relationships between the graph nodes needs lots of resources as RAM. On our linux server we had some issues with too less RAM causing an error which ssaid that we need to increase our max heapsize for neo4j. After we increased the value to almost the maximum RAM available, first it seemed to be the solution for our problems while creating realtionships, but after a little while the cypher query also was terminated. Now we had two options: Increasing the RAM of our server or split our creation statements, so that just a smaler amount of relationships are created at once.
+we had no possibility to increase the built in RAM of our server, because we had no physical access and also the amount of RAM which we should have bought would cost quiet a lot, so we decided to split our statements and use kind of batch processing to get our task done. [This](https://stackoverflow.com/questions/40492337/neo4j-add-huge-number-of-relationships-to-already-existing-nodes) post was very helpfull to understand how to create a batch processing like query.
+
 ## Used tools and software
 1. **[Umlet](https://www.umlet.com/)** for ER-Modeling of IMDb dataset
 2. **[docker](https://www.docker.com/)** as container engine
@@ -89,6 +92,7 @@ The import of the datasets took quite a long time, which is caused by the massiv
 * [IMDB DBMS from Github](https://github.com/TheSarang/IMDB-Database-Management-System/blob/master/SQL_Queries_RESULTS.pdf)
 * [IMDb Dataset](https://datasets.imdbws.com/)
 * [IMDb Dataset Interface](https://www.imdb.com/interfaces/)
+* [Add relationships to existing nodes](https://stackoverflow.com/questions/40492337/neo4j-add-huge-number-of-relationships-to-already-existing-nodes)
 
 ### Cypher Cheatsheet
 A cheatsheet for Cypher can be found [here](https://people.inf.elte.hu/kiss/13kor/Neo4j_CheatSheet_v3.pdf).
