@@ -93,6 +93,7 @@ we had no possibility to increase the built in RAM of our server, because we had
 * [IMDb Dataset](https://datasets.imdbws.com/)
 * [IMDb Dataset Interface](https://www.imdb.com/interfaces/)
 * [Add relationships to existing nodes](https://stackoverflow.com/questions/40492337/neo4j-add-huge-number-of-relationships-to-already-existing-nodes)
+* [Understanding memory consumption](https://neo4j.com/developer/kb/understanding-memory-consumption/)
 
 ### Cypher Cheatsheet
 A cheatsheet for Cypher can be found [here](https://people.inf.elte.hu/kiss/13kor/Neo4j_CheatSheet_v3.pdf).
