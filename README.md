@@ -14,6 +14,10 @@ The dataset can be downloaded from [here](https://datasets.imdbws.com/), the doc
 
 For this project we wanted to use a graph based database, to show advantages and disadvantages of data stored in graph based databases.
 
+[Here](https://github.com/NerdyStuff/Other_Databases/blob/master/What_is_a_graph_database.md) you can see what a graph based database is.
+
+[Here](https://github.com/NerdyStuff/Other_Databases/blob/master/ideas.md) you can see some ideas of what you can analyze with these datasets.
+
 ## Method
 To analyze the dataset and show advantages and disadvantages of graph based databases we downloaded the dataset from IMDb. The given datasets are stored as tab separated values (tsv). We created a relational database with [MariaDB](https://mariadb.org/) and put the data in it. We used this method, to fastly read data from the dataset. 
 At first we wanted to use MariaDb to run own SQL queries to get relevant data from the given dataset. But there was an easier way to import the data to our graph database, so we used the MariaDB just as a converter from TSV files to CSV files, which can easily be imported.
