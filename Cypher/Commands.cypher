@@ -39,3 +39,10 @@ WITH a
 MATCH (b:title_ratings)
 WHERE a.tconst = b.tconst
 CREATE (a)-[r:HAS_RATING]->(b);
+
+//Create Relationship between title_basics and title_akas
+MATCH (a:title_basics)
+WITH a
+MATCH (b:title_akas)
+WHERE a.tconst = b.titleID
+CREATE (a)-[r:HAS_TITLE_AKA]->(b);
