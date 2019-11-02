@@ -38,7 +38,7 @@ CREATE INDEX ON :title_basics(tconst);
 CREATE INDEX ON :title_crew(tconst);
 CREATE INDEX ON :title_ratings(tconst);
 CREATE INDEX ON :title_episode(tconst);
-CREATE INDEX ON :title_akas(tconst);
+CREATE INDEX ON :title_akas(titleID);
 CREATE INDEX ON :title_principals(tconst);
 CREATE INDEX ON :name_basics(nconst);
 
