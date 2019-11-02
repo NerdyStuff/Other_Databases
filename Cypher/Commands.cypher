@@ -82,6 +82,18 @@ LIMIT 1000000
 MERGE (a)-[r:HAS_SEASON]->(b)
 SET b:Processed2;
 
+//Create Relationship between title_basics and title_principals
+//This Query needs to be executed multiple times!
+MATCH (a:title_basics)
+WITH a
+MATCH (b:title_principals {tconst: a.tconst})
+WHERE NOT b:Processed8
+WITH a, b
+LIMIT 1000000
+MERGE (b)-[r:WORKED_ON]->(a)
+SET b:Processed8;
+
+
 // INSERT RELATIONSHIPS HERE
 
 
