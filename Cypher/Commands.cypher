@@ -56,7 +56,7 @@ WITH a
 MATCH (b:title_akas {titleID: a.tconst})
 WHERE NOT b:Processed
 WITH a, b
-LIMIT 50000
+LIMIT 500000
 MERGE (a)-[r:HAS_TITLE_AKA]->(b)
 SET b:Processed;
 
@@ -67,5 +67,5 @@ SET b:Processed;
 // After all relationships are created remove temporary nodes
 // Run this query multiple times at the end of the relationship creation
 MATCH (n:Processed)
-WITH n LIMIT 50000
+WITH n LIMIT 500000
 REMOVE n:Processed;
