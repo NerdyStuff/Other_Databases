@@ -60,6 +60,28 @@ LIMIT 1000000
 MERGE (a)-[r:HAS_TITLE_AKA]->(b)
 SET b:Processed;
 
+//Create Relationship between name_basics and title_principals
+//This Query needs to be executed multiple times!
+MATCH (a:name_basics)
+WITH a
+MATCH (b:title_principals {nconst: a.nconst})
+WHERE NOT b:Processed1
+WITH a, b
+LIMIT 20
+MERGE (a)-[r:IS_A]->(b)
+SET b:Processed1;
+
+//Create Relationship between title_basics and title_episode
+//This Query needs to be executed multiple times!
+MATCH (a:title_basics)
+WITH a
+MATCH (b:title_episode {parentTconst: a.tconst})
+WHERE NOT b:Processed2
+WITH a, b
+LIMIT 5
+MERGE (a)-[r:HAS_SEASON]->(b)
+SET b:Processed2;
+
 // INSERT RELATIONSHIPS HERE
 
 
