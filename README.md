@@ -121,7 +121,6 @@ MATCH (n) WHERE n.primaryName = 'Susan Wen' RETURN n;
 
 Therefore the database has to search through all nodes. The only way to improve the speed of this query is to use an index on the attribute 'primaryName', but it does not change the fact, that a graph based database is not the best usecase for this kind of queries.
 
-
 ## Used tools and software
 1. **[Umlet](https://www.umlet.com/)** for ER-Modeling of IMDb dataset
 2. **[docker](https://www.docker.com/)** as container engine
