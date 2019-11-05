@@ -94,6 +94,28 @@ LIMIT 1000000
 MERGE(a)-[r:IS_KNOWN_FOR]->(b)
 SET b:Processed4;
 
+//Create relationship between title_crew and title_basics
+//This query is not necessary
+MATCH (a:title_crew)
+UNWIND a.writers as writer
+MATCH (b:title_basics {tconst: a.tconst})
+WHERE NOT b:Processed5
+WITH a, b
+LIMIT 1000000
+MERGE (b)-[r:HAS_WRITER]->(a)
+SET b:Processed5;
+
+//Create Relationship between title_crew and title_basics
+//This Query needs to be executed multiple times!
+MATCH (a:title_crew)
+UNWIND a.directors as director
+MATCH (b:title_basics {tconst: a.tconst})
+WHERE NOT b:Processed7
+WITH a, b
+LIMIT 1000000
+MERGE (b)-[r:HAS_DIRECTOR]->(a)
+SET b:Processed7;
+
 //Create Relationship between title_basics and title_principals
 //This Query needs to be executed multiple times!
 MATCH (a:title_basics)
