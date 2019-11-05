@@ -24,7 +24,6 @@ At first we wanted to use MariaDB to run own SQL queries to get relevant data fr
 The way we imported and used the data is described in the section 'Documentation'.
 
 ## Documentation
-- **TODO**
 
 1. First we created a docker container with neo4j running on a linux server, to have a better access to the graph database with multiple users.
 
@@ -104,8 +103,12 @@ Figure 2: Shows seasons of a TV series.
 ![Bigger relationship](https://raw.githubusercontent.com/NerdyStuff/Other_Databases/master/documentation/graph3.png "Bigger relationship")
 Figure 3: Shows some relationships between film titles, actors ratings and the title akas.
 
-
 As you can see in figure 3 relationships have the same importance as the data in graph databases. The blue nodes represent the persons in our database. They are in a relationship with the red nodes, which represent an actor, director or other member of a movie crew such as a composer or writer. The beige-coloured nodes represent the film titles, together with the pink nodes, which are translations of this title. The yellow nodes show the rating of the spciific film title if it is available.
+
+
+![Bigger relationship with series](https://raw.githubusercontent.com/NerdyStuff/Other_Databases/master/documentation/graph4.png "Bigger relationship with series")
+Figure 4: Shows a relationship between a tv series season, an actor, his roles in other films and series, the series rating and the title akas.
+
 
 ## Used tools and software
 1. **[Umlet](https://www.umlet.com/)** for ER-Modeling of IMDb dataset
