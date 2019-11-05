@@ -140,6 +140,7 @@ Figure 4: Shows a relationship between a tv series season, an actor, his roles i
 * [Indexes on neo4j](https://neo4j.com/docs/cypher-manual/current/schema/index/)
 * [Monitor progress of indexing in neo4j](https://stackoverflow.com/questions/31397552/can-you-monitor-the-progress-of-a-neo4j-constraint)
 * [The Good, the Bad and the Hype about Graph Databases](https://tdwi.org/articles/2017/03/14/good-bad-and-hype-about-graph-databases-for-mdm.aspx)
+* [Why Graph Databases?](https://neo4j.com/why-graph-databases/)
 
 ### Cypher Cheatsheet
 A cheatsheet for Cypher can be found [here](https://people.inf.elte.hu/kiss/13kor/Neo4j_CheatSheet_v3.pdf).
