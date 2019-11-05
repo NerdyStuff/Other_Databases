@@ -89,6 +89,19 @@ At this point it needs to be mentioned that the process of indexing is done in b
 So creating an index while creating relationships at the same time is not a good idea, because  the advantages of the index are not used by the firstly fired up relationship creationship query.
 The advantage of an index is a massive performance boost if you want to access a node via a specific key, the disadvantage is the needed diskspace for the indexing. 
 
+## Results
+
+![Title akas](https://raw.githubusercontent.com/NerdyStuff/Other_Databases/master/documentation/graph.png)
+Figure 1: Shows the alternative titles of a film title.
+
+![Seasons of TV series](https://raw.githubusercontent.com/NerdyStuff/Other_Databases/master/documentation/graph2.png)
+Figure 2: Shows seasons of a TV series.
+
+![Bigger relationship](https://raw.githubusercontent.com/NerdyStuff/Other_Databases/master/documentation/graph3.png)
+Figure 3: Shows some relationships between film titles, actors ratings and the title akas.
+
+As you can see in figure 3 relationships have the same importance as the data in graph databases. The blue nodes represent the persons in our database. They are in a relationship with the red nodes, which represent an actor, director or other member of a movie crew such as a composer or writer. The beige-coloured nodes represent the film titles, together with the pink nodes, which are translations of this title. The yellow nodes show the rating of the spciific film title if it is available.
+
 ## Used tools and software
 1. **[Umlet](https://www.umlet.com/)** for ER-Modeling of IMDb dataset
 2. **[docker](https://www.docker.com/)** as container engine
@@ -97,9 +110,6 @@ The advantage of an index is a massive performance boost if you want to access a
 5. **[wget](https://wiki.ubuntuusers.de/wget/)** as download tool
 6. **[gunzip](https://linux.die.net/man/1/gunzip)** to extract files
 
-
-**CHANGE**
-100. **[IntelliJ](https://www.jetbrains.com/idea/)** to write the SQL to Cypher Program
 
 
 
