@@ -93,10 +93,11 @@ The advantage of an index is a massive performance boost if you want to access a
 Here you can see the results of what we wanted to do.
 
 ![Title akas](https://raw.githubusercontent.com/NerdyStuff/Other_Databases/master/documentation/graph.png "Title akas")
+
 Figure 1: Shows the alternative titles of a film title.
 
 
-![Seasons of TV series](https://raw.githubusercontent.com/NerdyStuff/Other_Databases/master/documentation/graph2.png )
+![Seasons of TV series](https://raw.githubusercontent.com/NerdyStuff/Other_Databases/master/documentation/graph2.png "Seasons of TV series")
 Figure 2: Shows seasons of a TV series.
 
 
