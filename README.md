@@ -92,15 +92,15 @@ The advantage of an index is a massive performance boost if you want to access a
 ## Results
 Here you can see the results of what we wanted to do.
 
-![Title akas](https://raw.githubusercontent.com/NerdyStuff/Other_Databases/master/documentation/graph.png)
+![Title akas](https://raw.githubusercontent.com/NerdyStuff/Other_Databases/master/documentation/graph.png "Title akas")
 Figure 1: Shows the alternative titles of a film title.
 
 
-![Seasons of TV series](https://raw.githubusercontent.com/NerdyStuff/Other_Databases/master/documentation/graph2.png)
+![Seasons of TV series](https://raw.githubusercontent.com/NerdyStuff/Other_Databases/master/documentation/graph2.png )
 Figure 2: Shows seasons of a TV series.
 
 
-![Bigger relationship](https://raw.githubusercontent.com/NerdyStuff/Other_Databases/master/documentation/graph3.png)
+![Bigger relationship](https://raw.githubusercontent.com/NerdyStuff/Other_Databases/master/documentation/graph3.png "Bigger relationship")
 Figure 3: Shows some relationships between film titles, actors ratings and the title akas.
 
 
