@@ -82,6 +82,18 @@ LIMIT 1000000
 MERGE (a)-[r:HAS_SEASON]->(b)
 SET b:Processed2;
 
+
+//Create Relationship between title_basics and name_basics
+//This Query needs to be executed multiple times!
+MATCH (a:name_basics)
+UNWIND a.knownForTitles as knownForTitle
+MATCH(b:title_basics{tconst: knownForTitle})
+WHERE NOT b:Processed4
+WITH a, b
+LIMIT 1000000
+MERGE(a)-[r:IS_KNOWN_FOR]->(b)
+SET b:Processed4
+
 //Create Relationship between title_basics and title_principals
 //This Query needs to be executed multiple times!
 MATCH (a:title_basics)
