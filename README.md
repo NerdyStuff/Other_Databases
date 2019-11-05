@@ -88,6 +88,8 @@ At this point it needs to be mentioned that the process of indexing is done in b
 So creating an index while creating relationships at the same time is not a good idea, because  the advantages of the index are not used by the firstly fired up relationship creationship query.
 The advantage of an index is a massive performance boost if you want to access a node via a specific key, the disadvantage is the needed diskspace for the indexing. 
 
+8. After we successfully created relationships between our nodes, we wanted to test a query, which is normally used on relational databases. This shows a disadvantage of graph based databases. For more information see section 'Results'.
+
 ## Results
 Here you can see the results of what we wanted to do.
 
@@ -109,6 +111,16 @@ As you can see in figure 3 relationships have the same importance as the data in
 ![Bigger relationship with series](https://raw.githubusercontent.com/NerdyStuff/Other_Databases/master/documentation/graph4.png "Bigger relationship with series")
 Figure 4: Shows a relationship between a tv series season, an actor, his roles in other films and series, the series rating and the title akas.
 
+As you can see a graph database is very good to show relationships between datasets.
+We also wanted to show disadvantages of a graph database, so we used a query, which is normaly used in relational database.
+The following query searches for a node, where the attribute 'primaryName' has the value 'Susan Wen' and returns this node.
+
+```
+MATCH (n) WHERE n.primaryName = 'Susan Wen' RETURN n;
+```
+
+Therefore the database has to search through all nodes. The only way to improve the speed of this query is to use an index on the attribute 'primaryName', but it does not change the fact, that a graph based database is not the best usecase for this kind of queries.
+
 
 ## Used tools and software
 1. **[Umlet](https://www.umlet.com/)** for ER-Modeling of IMDb dataset
@@ -117,10 +129,6 @@ Figure 4: Shows a relationship between a tv series season, an actor, his roles i
 4. **[Neo4J](https://neo4j.com/)** as graph database
 5. **[wget](https://wiki.ubuntuusers.de/wget/)** as download tool
 6. **[gunzip](https://linux.die.net/man/1/gunzip)** to extract files
-
-
-
-
 
 ## References
 * [NeoJ docker](https://hub.docker.com/_/neo4j)
