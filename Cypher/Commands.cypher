@@ -92,7 +92,7 @@ WHERE NOT b:Processed4
 WITH a, b
 LIMIT 1000000
 MERGE(a)-[r:IS_KNOWN_FOR]->(b)
-SET b:Processed4
+SET b:Processed4;
 
 //Create Relationship between title_basics and title_principals
 //This Query needs to be executed multiple times!
