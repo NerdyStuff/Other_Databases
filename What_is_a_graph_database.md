@@ -4,7 +4,7 @@
 
 A Graph Database uses graphs to store and display relationships between the data. 
 There are nodes and edges: The nodes represent the entity such as a person. They can have any number of properties. 
-The edge represent the relationship between two nodes. They always have a direction, a type, a start node and an end node.
+The edge represents the relationship between the nodes. They always have a direction, a type, a start node and an end node.
 Moreover relationships can have properties, just as nodes. A node can have any number of relationship with another node.
 
 One advantage of a graph database is that its performance stays constant while its data grows unlike the performace of traditional databases. Moreover, it is easy to search quickly for relationships. Finally, the relationships are indexed, resulting in an enhanced reading speed. 
